@@ -1,0 +1,602 @@
+{
+    "split_time": "2025-12-26 18:02:23",
+    "split_threshold_mb": 50,
+    "chunk_size_mb": 30,
+    "mod_directory": ".minecraft/versions/CMagic_client/mods",
+    "all_mod_files": [
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\architectury-13.0.8-neoforge.jar",
+            "file_name": "architectury-13.0.8-neoforge.jar",
+            "file_size_bytes": 584004,
+            "file_size_mb": 0.56,
+            "file_hash": "7a45a948b525c031ca85d221dfdbed85",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\be_quiet_negotiator-1.0.2.jar",
+            "file_name": "be_quiet_negotiator-1.0.2.jar",
+            "file_size_bytes": 15644,
+            "file_size_mb": 0.01,
+            "file_hash": "e394ad405fe9fdf6935bfe1d0c6c6eb5",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\Blood N' Particles v1.4.0 - NeoForge 1.21.1.jar",
+            "file_name": "Blood N' Particles v1.4.0 - NeoForge 1.21.1.jar",
+            "file_size_bytes": 854676,
+            "file_size_mb": 0.82,
+            "file_hash": "ee5e77f5448abcf0db73c0072d1b6a02",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\cadeditor-1.21.1-0.1.0-beta.2-neoforge.jar",
+            "file_name": "cadeditor-1.21.1-0.1.0-beta.2-neoforge.jar",
+            "file_size_bytes": 1485266,
+            "file_size_mb": 1.42,
+            "file_hash": "0a296817a4bd48dc03446ecf5d699dbe",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\camera-neoforge-1.21.1-1.0.21.jar",
+            "file_name": "camera-neoforge-1.21.1-1.0.21.jar",
+            "file_size_bytes": 302968,
+            "file_size_mb": 0.29,
+            "file_hash": "816c9f334468dea9a925a0e9dad9265b",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\cloth-config-15.0.140-neoforge.jar",
+            "file_name": "cloth-config-15.0.140-neoforge.jar",
+            "file_size_bytes": 1163890,
+            "file_size_mb": 1.11,
+            "file_hash": "4c3757160403fcccb8ad468c2ea22862",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\Corpse_Tweaker-1.0.0.jar",
+            "file_name": "Corpse_Tweaker-1.0.0.jar",
+            "file_size_bytes": 96191,
+            "file_size_mb": 0.09,
+            "file_hash": "437ca76be000c31fb4b222ab070b8c08",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\CreativeCore_NEOFORGE_v2.13.13_mc1.21.1.jar",
+            "file_name": "CreativeCore_NEOFORGE_v2.13.13_mc1.21.1.jar",
+            "file_size_bytes": 1199290,
+            "file_size_mb": 1.14,
+            "file_hash": "96cfaa47ed981020d45f6d9cbb58541a",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\cupboard-1.21-2.9.jar",
+            "file_name": "cupboard-1.21-2.9.jar",
+            "file_size_bytes": 23509,
+            "file_size_mb": 0.02,
+            "file_hash": "9cc5caf701898ba7236ca1e841d9049b",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\curios-neoforge-9.5.1+1.21.1.jar",
+            "file_name": "curios-neoforge-9.5.1+1.21.1.jar",
+            "file_size_bytes": 410690,
+            "file_size_mb": 0.39,
+            "file_hash": "e8f0a3574264bb202c153b90293dc84c",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\DistantHorizons-2.4.0-b-1.21.1.jar",
+            "file_name": "DistantHorizons-2.4.0-b-1.21.1.jar",
+            "file_size_bytes": 25484981,
+            "file_size_mb": 24.3,
+            "file_hash": "5e79da17ff772978cbffe15c922b6dfb",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\drippyloadingscreen_neoforge_3.1.0_MC_1.21.1.jar",
+            "file_name": "drippyloadingscreen_neoforge_3.1.0_MC_1.21.1.jar",
+            "file_size_bytes": 172759,
+            "file_size_mb": 0.16,
+            "file_hash": "b0f9d9bd40b48aedf92c4d7f2aaf60bb",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\drippy_early_loading_module_neoforge_3.1.0_MC_1.21.1.jar",
+            "file_name": "drippy_early_loading_module_neoforge_3.1.0_MC_1.21.1.jar",
+            "file_size_bytes": 133974,
+            "file_size_mb": 0.13,
+            "file_hash": "678e38bfff0c7bd93d29261b4afcdf9b",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\EnhancedVisuals_NEOFORGE_v1.8.25_mc1.21.1.jar",
+            "file_name": "EnhancedVisuals_NEOFORGE_v1.8.25_mc1.21.1.jar",
+            "file_size_bytes": 4728886,
+            "file_size_mb": 4.51,
+            "file_hash": "44bd15431f64718e3303873f9eb5d3f0",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\exposure-neoforge-1.21.1-1.9.12.jar",
+            "file_name": "exposure-neoforge-1.21.1-1.9.12.jar",
+            "file_size_bytes": 2179423,
+            "file_size_mb": 2.08,
+            "file_hash": "74e8f47c07010f53a74c8b53188d9716",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\fancymenu_neoforge_3.8.1_MC_1.21.1.jar",
+            "file_name": "fancymenu_neoforge_3.8.1_MC_1.21.1.jar",
+            "file_size_bytes": 4297501,
+            "file_size_mb": 4.1,
+            "file_hash": "32ef6216a5ae56a2016c8dc046c7fa76",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\farsight-1.21.1-4.5.jar",
+            "file_name": "farsight-1.21.1-4.5.jar",
+            "file_size_bytes": 438450,
+            "file_size_mb": 0.42,
+            "file_hash": "df8d68fefe71a3f444f6538bd865dc8b",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\fzzy_config-0.7.3+1.21+neoforge.jar",
+            "file_name": "fzzy_config-0.7.3+1.21+neoforge.jar",
+            "file_size_bytes": 2299079,
+            "file_size_mb": 2.19,
+            "file_hash": "dd69c15d6a79d3813e1cb76e261bed0f",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\geckolib-neoforge-1.21.1-4.8.2.jar",
+            "file_name": "geckolib-neoforge-1.21.1-4.8.2.jar",
+            "file_size_bytes": 621848,
+            "file_size_mb": 0.59,
+            "file_hash": "872aa036c6173e995ff8b643dd51100c",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\GlitchCore-neoforge-1.21.1-2.1.0.0.jar",
+            "file_name": "GlitchCore-neoforge-1.21.1-2.1.0.0.jar",
+            "file_size_bytes": 90918,
+            "file_size_mb": 0.09,
+            "file_hash": "ec491ad844e966641c5a124913c3c1e7",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\gunsmithlib-1.21.1-4.10.0-neoforge.jar",
+            "file_name": "gunsmithlib-1.21.1-4.10.0-neoforge.jar",
+            "file_size_bytes": 54468141,
+            "file_size_mb": 51.94,
+            "file_hash": "693d4cfa764c1a4d792832d184c11490",
+            "is_split": true,
+            "split_details": {
+                "original_file_size_bytes": 54468141,
+                "original_file_size_mb": 51.94,
+                "original_file_hash": "693d4cfa764c1a4d792832d184c11490",
+                "chunk_count": 2,
+                "chunk_size_setting_mb": 30,
+                "chunks": [
+                    {
+                        "chunk_name": "gunsmithlib-1.21.1-4.10.0-neoforge.jar.part01",
+                        "chunk_path": ".minecraft/versions/CMagic_client/mods\\gunsmithlib-1.21.1-4.10.0-neoforge.jar.part01",
+                        "chunk_size_bytes": 31457280,
+                        "chunk_size_mb": 30.0,
+                        "chunk_hash": "9b9c15341cc05bf93448140f0b14713f",
+                        "chunk_index": 1
+                    },
+                    {
+                        "chunk_name": "gunsmithlib-1.21.1-4.10.0-neoforge.jar.part02",
+                        "chunk_path": ".minecraft/versions/CMagic_client/mods\\gunsmithlib-1.21.1-4.10.0-neoforge.jar.part02",
+                        "chunk_size_bytes": 23010861,
+                        "chunk_size_mb": 21.94,
+                        "chunk_hash": "012e75d2d5c929aa5b4f525727582ad9",
+                        "chunk_index": 2
+                    }
+                ]
+            }
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\hiddennames-1.21.0-1.0.6.jar",
+            "file_name": "hiddennames-1.21.0-1.0.6.jar",
+            "file_size_bytes": 48056,
+            "file_size_mb": 0.05,
+            "file_hash": "54e7cc9d40cc6bcb6117b1b744f705de",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\IMBlocker-5.4.6-neoforge+1.20.6-1.21.8.jar",
+            "file_name": "IMBlocker-5.4.6-neoforge+1.20.6-1.21.8.jar",
+            "file_size_bytes": 165672,
+            "file_size_mb": 0.16,
+            "file_hash": "3fcc790547ee1a4adfeda8fecc89b6bb",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\InventoryFree-1.21.0-3.3.1.jar",
+            "file_name": "InventoryFree-1.21.0-3.3.1.jar",
+            "file_size_bytes": 46497,
+            "file_size_mb": 0.04,
+            "file_hash": "5ac66bdbd1fa307b9d9a9fed351b4184",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\iris-neoforge-1.8.12+mc1.21.1.jar",
+            "file_name": "iris-neoforge-1.8.12+mc1.21.1.jar",
+            "file_size_bytes": 2438548,
+            "file_size_mb": 2.33,
+            "file_hash": "6c1122aa7c2b1a4f24831e394c5b513f",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\konkrete_neoforge_1.9.9_MC_1.21.jar",
+            "file_name": "konkrete_neoforge_1.9.9_MC_1.21.jar",
+            "file_size_bytes": 618842,
+            "file_size_mb": 0.59,
+            "file_hash": "6e77d08299ea1ec7756a299263bc469b",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\kotlinforforge-5.10.0-all.jar",
+            "file_name": "kotlinforforge-5.10.0-all.jar",
+            "file_size_bytes": 6730194,
+            "file_size_mb": 6.42,
+            "file_hash": "0d0d14c17956ba4a042d47b75e0b6831",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\kubejs-neoforge-2101.7.1-build.181.jar",
+            "file_name": "kubejs-neoforge-2101.7.1-build.181.jar",
+            "file_size_bytes": 1913809,
+            "file_size_mb": 1.83,
+            "file_hash": "01306ac3beee4ae4e7c051b603b7bee2",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\magic_girl_phone-1.0.3-alpha10.jar",
+            "file_name": "magic_girl_phone-1.0.3-alpha10.jar",
+            "file_size_bytes": 1332287,
+            "file_size_mb": 1.27,
+            "file_hash": "8819b21b569f08cf78f21d8b4f24e4d3",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\melody_neoforge_1.0.10_MC_1.21.jar",
+            "file_name": "melody_neoforge_1.0.10_MC_1.21.jar",
+            "file_size_bytes": 36096,
+            "file_size_mb": 0.03,
+            "file_hash": "875f4a68f2cd7ee2cc135904653c93d4",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\mocai-2.7.5-neoforge-1.21.1.jar",
+            "file_name": "mocai-2.7.5-neoforge-1.21.1.jar",
+            "file_size_bytes": 460921,
+            "file_size_mb": 0.44,
+            "file_hash": "8769eaf7685a7b8a2bada53b013e1801",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\mocai_clues-0.0.11.jar",
+            "file_name": "mocai_clues-0.0.11.jar",
+            "file_size_bytes": 65499,
+            "file_size_mb": 0.06,
+            "file_hash": "cb14394f4ae90e0e3dfaa0ff0dd542c7",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\mocai_music（低配）-1.0.0-neoforge-1.21.1.jar",
+            "file_name": "mocai_music（低配）-1.0.0-neoforge-1.21.1.jar",
+            "file_size_bytes": 114380403,
+            "file_size_mb": 109.08,
+            "file_hash": "793b9bd0542c0d2d823a2d2d423eafea",
+            "is_split": true,
+            "split_details": {
+                "original_file_size_bytes": 114380403,
+                "original_file_size_mb": 109.08,
+                "original_file_hash": "793b9bd0542c0d2d823a2d2d423eafea",
+                "chunk_count": 4,
+                "chunk_size_setting_mb": 30,
+                "chunks": [
+                    {
+                        "chunk_name": "mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part01",
+                        "chunk_path": ".minecraft/versions/CMagic_client/mods\\mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part01",
+                        "chunk_size_bytes": 31457280,
+                        "chunk_size_mb": 30.0,
+                        "chunk_hash": "97c6988cb6496085742f0fae4aa4ece0",
+                        "chunk_index": 1
+                    },
+                    {
+                        "chunk_name": "mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part02",
+                        "chunk_path": ".minecraft/versions/CMagic_client/mods\\mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part02",
+                        "chunk_size_bytes": 31457280,
+                        "chunk_size_mb": 30.0,
+                        "chunk_hash": "c4250cf82033b41afa10172dbda91b97",
+                        "chunk_index": 2
+                    },
+                    {
+                        "chunk_name": "mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part03",
+                        "chunk_path": ".minecraft/versions/CMagic_client/mods\\mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part03",
+                        "chunk_size_bytes": 31457280,
+                        "chunk_size_mb": 30.0,
+                        "chunk_hash": "aa9b52b6292add2609150498ac31ea4f",
+                        "chunk_index": 3
+                    },
+                    {
+                        "chunk_name": "mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part04",
+                        "chunk_path": ".minecraft/versions/CMagic_client/mods\\mocai_music（低配）-1.0.0-neoforge-1.21.1.jar.part04",
+                        "chunk_size_bytes": 20008563,
+                        "chunk_size_mb": 19.08,
+                        "chunk_hash": "ea8feb8f9b158327d505acf36f05ae88",
+                        "chunk_index": 4
+                    }
+                ]
+            }
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\moonlight-1.21-2.25.3-neoforge.jar",
+            "file_name": "moonlight-1.21-2.25.3-neoforge.jar",
+            "file_size_bytes": 1309907,
+            "file_size_mb": 1.25,
+            "file_hash": "9b050baa93557dc78615ac05ee72d707",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\packetfixer-3.3.1-1.20.5-1.21.X-merged.jar",
+            "file_name": "packetfixer-3.3.1-1.20.5-1.21.X-merged.jar",
+            "file_size_bytes": 46623,
+            "file_size_mb": 0.04,
+            "file_hash": "8f22fb065079340a72ae5ce0da12efcb",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\PlayerNameTweaks-neoforge-1.20.5+1.21.x-1.2.jar",
+            "file_name": "PlayerNameTweaks-neoforge-1.20.5+1.21.x-1.2.jar",
+            "file_size_bytes": 24277,
+            "file_size_mb": 0.02,
+            "file_hash": "df35ab115e106f9f5f213ae95462d023",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\reforgedplaymod-1.21.1-0.3.jar",
+            "file_name": "reforgedplaymod-1.21.1-0.3.jar",
+            "file_size_bytes": 17406874,
+            "file_size_mb": 16.6,
+            "file_hash": "1b433ec3fd96136836127dc69c7eb54a",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\rhino-2101.2.7-build.77.jar",
+            "file_name": "rhino-2101.2.7-build.77.jar",
+            "file_size_bytes": 881463,
+            "file_size_mb": 0.84,
+            "file_hash": "f7d230bc3592bba05c71ea9349bd105c",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\Searchables-neoforge-1.21.1-1.0.2.jar",
+            "file_name": "Searchables-neoforge-1.21.1-1.0.2.jar",
+            "file_size_bytes": 77326,
+            "file_size_mb": 0.07,
+            "file_hash": "0a0a8665bb4d77e3f8139750cb98d9e4",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\showcaseitem-1.21.1-1.1.0.jar",
+            "file_name": "showcaseitem-1.21.1-1.1.0.jar",
+            "file_size_bytes": 19759,
+            "file_size_mb": 0.02,
+            "file_hash": "6b184cc61df68d118a25767de5575fcc",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\sleep_tight-1.21-1.3.3-neoforge.jar",
+            "file_name": "sleep_tight-1.21-1.3.3-neoforge.jar",
+            "file_size_bytes": 769153,
+            "file_size_mb": 0.73,
+            "file_hash": "8a7332ef6e94297855de025c5f7176e2",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\sound-physics-remastered-neoforge-1.21.1-1.5.1.jar",
+            "file_name": "sound-physics-remastered-neoforge-1.21.1-1.5.1.jar",
+            "file_size_bytes": 202454,
+            "file_size_mb": 0.19,
+            "file_hash": "126d0548f933cb1d25f4404198b5bf52",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\sound_effect-1.2.0-neoforge-1.21.1.jar",
+            "file_name": "sound_effect-1.2.0-neoforge-1.21.1.jar",
+            "file_size_bytes": 1467541,
+            "file_size_mb": 1.4,
+            "file_hash": "85cc391aab97c50370eeb01af725b110",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\sqlite-jdbc-3.51.0.0+2025-11-13-all (1).jar",
+            "file_name": "sqlite-jdbc-3.51.0.0+2025-11-13-all (1).jar",
+            "file_size_bytes": 14397468,
+            "file_size_mb": 13.73,
+            "file_hash": "660f5aacb8d7167a00fbb560358b9d21",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\stickit-1.21.1-NeoForge-1.0.3.jar",
+            "file_name": "stickit-1.21.1-NeoForge-1.0.3.jar",
+            "file_size_bytes": 147704,
+            "file_size_mb": 0.14,
+            "file_hash": "8175e51e70bedf1c437aa375d0e1e6d2",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\transmog-neoforge-1.6.0+1.21.1.jar",
+            "file_name": "transmog-neoforge-1.6.0+1.21.1.jar",
+            "file_size_bytes": 90605,
+            "file_size_mb": 0.09,
+            "file_hash": "9bef4e9eebe9325b045fe34fb5196e50",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[1.21.1] SecurityCraft v1.10.1.jar",
+            "file_name": "[1.21.1] SecurityCraft v1.10.1.jar",
+            "file_size_bytes": 4951098,
+            "file_size_mb": 4.72,
+            "file_hash": "0513eed6536a3449368be2d9fc1acf88",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[CMD 指令摄影机] CMDCam_NEOFORGE_v2.2.5_mc1.21.1.jar",
+            "file_name": "[CMD 指令摄影机] CMDCam_NEOFORGE_v2.2.5_mc1.21.1.jar",
+            "file_size_bytes": 137923,
+            "file_size_mb": 0.13,
+            "file_hash": "a06808a7dc17a7e50a1cde869a6f60a1",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[万用皮肤补丁] CustomSkinLoader_ForgeV3-14.26.1.jar",
+            "file_name": "[万用皮肤补丁] CustomSkinLoader_ForgeV3-14.26.1.jar",
+            "file_size_bytes": 182434,
+            "file_size_mb": 0.17,
+            "file_hash": "38be8e24bb12c1c52d0cc5f18bdf06dc",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[卓越前线] superbwarfare-1.21.1-0.8.7.1-baa2609f.jar",
+            "file_name": "[卓越前线] superbwarfare-1.21.1-0.8.7.1-baa2609f.jar",
+            "file_size_bytes": 24251696,
+            "file_size_mb": 23.13,
+            "file_hash": "3213354ffdade66ff6791fb349ae337b",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[可拴玩家] leashedplayer-0.0.4.0.4.jar",
+            "file_name": "[可拴玩家] leashedplayer-0.0.4.0.4.jar",
+            "file_size_bytes": 2689986,
+            "file_size_mb": 2.57,
+            "file_hash": "e82b1bc0ac667b05d32674852efc3032",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[搬运] carryon-neoforge-1.21.1-2.2.2.11.jar",
+            "file_name": "[搬运] carryon-neoforge-1.21.1-2.2.2.11.jar",
+            "file_size_bytes": 347647,
+            "file_size_mb": 0.33,
+            "file_hash": "f8438716763fe3865a833f8a9dcceb9e",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[方块小镇] yuushya-1.21.0-neoforge-2.2.3.jar",
+            "file_name": "[方块小镇] yuushya-1.21.0-neoforge-2.2.3.jar",
+            "file_size_bytes": 23381639,
+            "file_size_mb": 22.3,
+            "file_hash": "dd0dddd7bd077be59c289318e61e7d23",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[是，史蒂夫模型] ysm-2.5.1-neoforge+mc1.21.1-release.jar",
+            "file_name": "[是，史蒂夫模型] ysm-2.5.1-neoforge+mc1.21.1-release.jar",
+            "file_size_bytes": 36429226,
+            "file_size_mb": 34.74,
+            "file_hash": "83827ee5d9c3178161ed5c07108b86a7",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[机械动力] create-1.21.1-6.0.7.jar",
+            "file_name": "[机械动力] create-1.21.1-6.0.7.jar",
+            "file_size_bytes": 19004106,
+            "file_size_mb": 18.12,
+            "file_hash": "e249a6bdcfffb51972683e32d8d795c4",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[机械动力：伪装方块+] copycats-3.0.2+mc.1.21.1-neoforge.jar",
+            "file_name": "[机械动力：伪装方块+] copycats-3.0.2+mc.1.21.1-neoforge.jar",
+            "file_size_bytes": 1790416,
+            "file_size_mb": 1.71,
+            "file_hash": "cde8b4432b19fde830c50ce07a2b89b9",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[森罗物语：厨房] kaleidoscopecookery-1.1.0-neoforge+mc1.21.1.jar",
+            "file_name": "[森罗物语：厨房] kaleidoscopecookery-1.1.0-neoforge+mc1.21.1.jar",
+            "file_size_bytes": 2141970,
+            "file_size_mb": 2.04,
+            "file_hash": "72d3fd0ad66f26598b38394430c0c098",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[森罗物语：玩偶] kaleidoscopedoll-1.21.1-neoforge-1.2.2.jar",
+            "file_name": "[森罗物语：玩偶] kaleidoscopedoll-1.21.1-neoforge-1.2.2.jar",
+            "file_size_bytes": 2305330,
+            "file_size_mb": 2.2,
+            "file_hash": "9efd1808a9b6ac6e5c9110456c230ea4",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[沉浸画框] immersive_paintings-neoforge-1.21.1-0.7.4.jar",
+            "file_name": "[沉浸画框] immersive_paintings-neoforge-1.21.1-0.7.4.jar",
+            "file_size_bytes": 5342505,
+            "file_size_mb": 5.1,
+            "file_hash": "eaa198c4e429cd3a68a0bdae300fd328",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[网络音乐机] netmusic-1.1.8-neoforge+mc1.21.1.jar",
+            "file_name": "[网络音乐机] netmusic-1.1.8-neoforge+mc1.21.1.jar",
+            "file_size_bytes": 592616,
+            "file_size_mb": 0.57,
+            "file_hash": "1ddbf7a5ceb3091b54e18d01f8f193b6",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[连接纹理] CTM-1.21-1.2.1+3.jar",
+            "file_name": "[连接纹理] CTM-1.21-1.2.1+3.jar",
+            "file_size_bytes": 240791,
+            "file_size_mb": 0.23,
+            "file_hash": "7f5650a579a6aa725a75e20512cc2bd1",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[遗体] corpse-neoforge-1.21.1-1.1.13.jar",
+            "file_name": "[遗体] corpse-neoforge-1.21.1-1.1.13.jar",
+            "file_size_bytes": 253694,
+            "file_size_mb": 0.24,
+            "file_hash": "14970b867dae595c69013e162787d849",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[钠] sodium-neoforge-0.6.13+mc1.21.1.jar",
+            "file_name": "[钠] sodium-neoforge-0.6.13+mc1.21.1.jar",
+            "file_size_bytes": 1162994,
+            "file_size_mb": 1.11,
+            "file_hash": "e5018c782d851fea76be0205b7616e5d",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[锦致装饰] supplementaries-1.21-3.4.20-neoforge.jar",
+            "file_name": "[锦致装饰] supplementaries-1.21-3.4.20-neoforge.jar",
+            "file_size_bytes": 12413238,
+            "file_size_mb": 11.84,
+            "file_hash": "3dc42040f1dc1e54adc0b2b9ffae17ab",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[键位冲突显示] Controlling-neoforge-1.21.1-19.0.5.jar",
+            "file_name": "[键位冲突显示] Controlling-neoforge-1.21.1-19.0.5.jar",
+            "file_size_bytes": 77555,
+            "file_size_mb": 0.07,
+            "file_hash": "7141c2d0bb774dc6e4481be32b685179",
+            "is_split": false
+        },
+        {
+            "file_path": ".minecraft/versions/CMagic_client/mods\\[静谧四季／季节] SereneSeasons-neoforge-1.21.1-10.1.0.3.jar",
+            "file_name": "[静谧四季／季节] SereneSeasons-neoforge-1.21.1-10.1.0.3.jar",
+            "file_size_bytes": 159205,
+            "file_size_mb": 0.15,
+            "file_hash": "2928f502140c1ff72adf2df7642d9ba6",
+            "is_split": false
+        }
+    ]
+}
