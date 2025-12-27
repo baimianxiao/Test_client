@@ -10,6 +10,7 @@ from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QProgressBar, QTextEdit, \
     QMessageBox
 
+from mod_validate import validate_mods_with_config, print_validate_report
 from util import *
 
 # 目录
@@ -18,6 +19,7 @@ config_dir = os.path.join(root_dir, "config")
 lib_dir = os.path.join(root_dir, "lib")
 temp_dir = os.path.join(root_dir, "temp")  # 临时文件目录
 git_dir = os.path.join(lib_dir, "git")
+local_mod_dir = os.path.join(root_dir, ".minecraft","versions","CMagic_client","mods")
 
 dir_dict = {
     "config_dir":config_dir,
@@ -113,7 +115,7 @@ class GitDeployThread(QThread):
             if not download_success:
                 raise Exception("获取远程mod列表失败")
 
-            # 比对本地mod列表
+            # 3.比对本地mod列表
             self.log_signal.emit(f"🔍 检测是否需要更新")
             if os.path.exists(mod_info_path):
                 self.log_signal.emit(f"✅ 本地mod列表已存在")
@@ -122,6 +124,7 @@ class GitDeployThread(QThread):
                 if mod_info["split_time"]==latest_mod_info["split_time"]:
                     self.log_signal.emit(f"✅ 本地mod列表已是最新")
                     self.finish_signal.emit(True)
+                    os.remove(latest_mod_info_path)
                     return
                 else:
                     self.log_signal.emit(f"ℹ️ 存在需要更新的mod")
@@ -130,7 +133,23 @@ class GitDeployThread(QThread):
                 shutil.move(latest_mod_info_path, mod_info_path)
                 self.log_signal.emit(f"✅ 创建mod列表成功")
 
-            # 3.使用mod列表检测本地mod
+            # 4.使用mod列表检测本地mod
+            self.log_signal.emit(f"🔍 检测本地mod文件")
+            inconsistent_mods, extra_local_files= validate_mods_with_config(mod_info_path, local_mod_dir)
+            print_validate_report(inconsistent_mods, extra_local_files)
+
+            # 4.
+            if len(inconsistent_mods['missing_files'])==0:
+                self.log_signal.emit(f"✅ 所有必须的mod文件存在")
+            else:
+                self.log_signal.emit(f"ℹ️ 缺少必须的mod文件")
+                all_mod_files=get_json_from_file(mod_info_path)["all_mod_files"]
+                for missing_mods in inconsistent_mods['missing_files']:
+                    self.log_signal.emit(f"🔄 同步缺少的 {missing_mods}")
+                    single_mod_info=all_mod_files[missing_mods]
+
+
+
 
 
 
