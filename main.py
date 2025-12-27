@@ -1,5 +1,6 @@
-import os
+# -*- coding: utf-8 -*-
 import platform
+import shutil
 import subprocess
 import sys
 import time
@@ -9,28 +10,48 @@ from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QProgressBar, QTextEdit, \
     QMessageBox
 
+from util import *
+
 # 目录
 root_dir = os.getcwd()  # 根目录
+config_dir = os.path.join(root_dir, "config")
+lib_dir = os.path.join(root_dir, "lib")
 temp_dir = os.path.join(root_dir, "temp")  # 临时文件目录
-git_dir = os.path.join(root_dir, "lib", "git")
+git_dir = os.path.join(lib_dir, "git")
+
+dir_dict = {
+    "config_dir":config_dir,
+    "lib_dir":lib_dir,
+    "temp_dir":temp_dir,
+    "git_dir":git_dir
+}
+
+# 文件
+latest_mod_info_name="latest_mod_info.json"
+git_zip_name = "git.7z.exe"  # 下载后的压缩包名
 
 # 路径
+mod_info_path = os.path.join(config_dir, "mod_info.json")
+latest_mod_info_path = os.path.join(temp_dir, latest_mod_info_name)
 git_exe_path = os.path.join(git_dir, "bin","git.exe")  # Git可执行文件路径
 
 # 地址
 remote_repo = "https://github.com/baimianxiao/Test_client.git"  # 远程Git仓库（HTTPS）
+
+mod_info_urls=[
+    "https://gh-proxy.org/https://github.com/baimianxiao/Test_client/blob/master/config/mod_info.json",
+]
+
 git_download_urls = [
     "https://registry.npmmirror.com/-/binary/git-for-windows/v2.52.0.windows.1/PortableGit-2.52.0-64-bit.7z.exe",
     "https://gh-proxy.org/https://github.com/git-for-windows/git/releases/download/v2.52.0.windows.1/PortableGit-2.52.0-64-bit.7z.exe",
     "https://github.com/git-for-windows/git/releases/download/v2.52.0.windows.1/PortableGit-2.52.0-64-bit.7z.exe"
 ]
 
-git_zip_name = "git.7z.exe"  # 下载后的压缩包名
+
 
 TARGET_UPDATE_DIR = os.getcwd()  # 整合包根目录（即更新目标目录）
 
-
-# ----------------------------------------------------------------------
 
 class GitDeployThread(QThread):
     """Git便携版自动部署线程（后台执行）"""
@@ -41,20 +62,87 @@ class GitDeployThread(QThread):
 
     def run(self):
         try:
-            # 1. 检测Git是否已存在
+            # 1. 创建需要的目录
+            self.log_signal.emit(f"🔍 检测工作目录")
+            for dir_name in dir_dict:
+                dir_path=dir_dict[dir_name]
+                if not os.path.exists(dir_path):
+                    self.log_signal.emit(f"🔧 创建{dir_name}目录")
+                    os.makedirs(dir_path)
+                    self.log_signal.emit(f"✅ 创建{dir_name}目录")
+                else:
+                    self.log_signal.emit(f"✅ {dir_name}已存在")
+
+            # 2.获取远程mod列表
+            self.log_signal.emit(f"🔍 检测更新文件线路")
+            mod_fastest_url = self.get_fastest_url(mod_info_urls)
+            if not mod_fastest_url:
+                self.log_signal.emit(f"❌ 所有线路测速失败，尝试全部线路下载...")
+                download_urls = mod_info_urls
+            else:
+                self.log_signal.emit(f"✅ 选择最快线路：{mod_fastest_url}")
+                download_urls = [mod_fastest_url] + [u for u in mod_info_urls if u != mod_fastest_url]
+
+            download_success = False
+            for idx, url in enumerate(download_urls):
+                try:
+                    self.log_signal.emit(f"📥 开始从线路 {idx + 1}/{len(download_urls)} 下载：{url}")
+
+                    response = requests.get(url, stream=True, timeout=30, proxies={"http": None, "https": None})
+                    response.raise_for_status()  # 触发HTTP错误（如404/500）
+
+                    git_zip_path = os.path.join(temp_dir, latest_mod_info_name)
+                    with open(git_zip_path, "wb") as f:
+                        for chunk in response.iter_content(chunk_size=1024 * 1024):
+                            if chunk:
+                                f.write(chunk)
+
+                    self.log_signal.emit(f"✅ mod列表获取完成！")
+                    download_success = True
+                    break  # 下载成功，退出线路循环
+
+                except Exception as e:
+                    self.log_signal.emit(f"❌ 线路 {url} 下载失败：{str(e)}")
+                    # 清理不完整文件
+                    if os.path.exists(git_zip_path):
+                        os.remove(git_zip_path)
+                    # 最后一条线路仍失败
+                    if idx == len(download_urls) - 1:
+                        self.log_signal.emit(f"❌ 所有线路下载失败！")
+
+            if not download_success:
+                raise Exception("获取远程mod列表失败")
+
+            # 比对本地mod列表
+            self.log_signal.emit(f"🔍 检测是否需要更新")
+            if os.path.exists(mod_info_path):
+                self.log_signal.emit(f"✅ 本地mod列表已存在")
+                mod_info= get_json_from_file(mod_info_path)
+                latest_mod_info = get_json_from_file(latest_mod_info_path)
+                if mod_info["split_time"]==latest_mod_info["split_time"]:
+                    self.log_signal.emit(f"✅ 本地mod列表已是最新")
+                    self.finish_signal.emit(True)
+                    return
+                else:
+                    self.log_signal.emit(f"ℹ️ 存在需要更新的mod")
+            else:
+                self.log_signal.emit(f"🔧 创建mod列表")
+                shutil.move(latest_mod_info_path, mod_info_path)
+                self.log_signal.emit(f"✅ 创建mod列表成功")
+
+            # 3.使用mod列表检测本地mod
+
+
+
+
+            return
+            # 2. 检测Git是否已存在
             if os.path.exists(git_exe_path):
-                self.log_signal.emit(f"✅ git.exe已存在，路径:{git_exe_path}")
+                self.log_signal.emit(f"✅ git.exe已存在")
                 self.finish_signal.emit(True)
                 return
 
-            # 2. 创建需要的目录
-            if not os.path.exists(temp_dir):
-                os.makedirs(temp_dir)
-                self.log_signal.emit(f"🔧 创建Git目录")
 
-            if not os.path.exists(git_dir):
-                os.makedirs(git_dir)
-                self.log_signal.emit(f"🔧 创建Temp目录")
 
             # 3. 下载Git便携版
             # 3.1 先测速选最快线路
@@ -160,84 +248,6 @@ class GitDeployThread(QThread):
         return fastest_url
 
 
-class UpdateThread(QThread):
-    """整合包更新线程（后台执行）"""
-    log_signal = pyqtSignal(str)
-    finish_signal = pyqtSignal(bool)
-
-    def get_local_tag(self):
-        """获取本地当前版本Tag"""
-        try:
-            res = subprocess.check_output(
-                [git_exe_path, "describe", "--tags", "--abbrev=0"],
-                cwd=TARGET_UPDATE_DIR, shell=False, encoding="utf-8", stderr=subprocess.STDOUT
-            )
-            return res.strip()
-        except:
-            return "未初始化（首次使用）"
-
-    def get_remote_tag(self):
-        """获取远程最新Tag"""
-        try:
-            # 拉取远程Tag列表并排序
-            res = subprocess.check_output(
-                [git_exe_path, "ls-remote", "--tags", "--sort=-v:refname", remote_repo],
-                cwd=TARGET_UPDATE_DIR, shell=False, encoding="utf-8", stderr=subprocess.STDOUT
-            )
-            latest_tag = res.split("\n")[0].split("/")[-1].strip()
-            return latest_tag
-        except Exception as e:
-            self.log_signal.emit(f"❌ 拉取远程版本失败：{str(e)}")
-            return None
-
-    def run(self):
-        try:
-            # 1. 初始化Git仓库（首次使用）
-            if not os.path.exists(os.path.join(TARGET_UPDATE_DIR, ".git")):
-                self.log_signal.emit("🔧 首次更新，初始化本地仓库...")
-                subprocess.check_call(
-                    [git_exe_path, "init"], cwd=TARGET_UPDATE_DIR, shell=False, stderr=subprocess.STDOUT
-                )
-                subprocess.check_call(
-                    [git_exe_path, "remote", "add", "origin", remote_repo],
-                    cwd=TARGET_UPDATE_DIR, shell=False, stderr=subprocess.STDOUT
-                )
-
-            # 2. 拉取远程信息
-            self.log_signal.emit("📥 拉取远程最新版本信息...")
-            subprocess.check_call(
-                [git_exe_path, "fetch", "origin", "--tags"],
-                cwd=TARGET_UPDATE_DIR, shell=False, stderr=subprocess.STDOUT
-            )
-
-            # 3. 版本对比
-            local_tag = self.get_local_tag()
-            remote_tag = self.get_remote_tag()
-            if not remote_tag:
-                self.finish_signal.emit(False)
-                return
-
-            self.log_signal.emit(f"📌 本地版本：{local_tag}")
-            self.log_signal.emit(f"📌 远程版本：{remote_tag}")
-            if local_tag == remote_tag:
-                self.log_signal.emit("✅ 当前已是最新版本，无需更新！")
-                self.finish_signal.emit(True)
-                return
-
-            # 4. 执行增量更新（强制切换Tag，忽略本地修改；需保留配置可改merge）
-            self.log_signal.emit(f"🔄 开始更新到版本：{remote_tag}...")
-            subprocess.check_call(
-                [git_exe_path, "checkout", "-f", remote_tag],
-                cwd=TARGET_UPDATE_DIR, shell=False, stderr=subprocess.STDOUT
-            )
-            self.log_signal.emit(f"✅ 更新完成！当前版本：{remote_tag}")
-            self.finish_signal.emit(True)
-
-        except Exception as e:
-            self.log_signal.emit(f"❌ 更新失败：{str(e)}")
-            self.finish_signal.emit(False)
-
-
 class MCUpdaterGUI(QWidget):
     """整合包更新器GUI界面"""
 
@@ -249,7 +259,7 @@ class MCUpdaterGUI(QWidget):
     def init_ui(self):
         # 窗口配置
         self.setWindowTitle("MC整合包自动更新器 v1.0")
-        self.setFixedSize(500, 400)  # 固定窗口大小，避免拉伸变形
+        self.setFixedSize(800, 600)  # 固定窗口大小，避免拉伸变形
         self.setStyleSheet("""
             QWidget { background-color: #2c3e50; color: #ecf0f1; font-size: 14px; }
             QPushButton { background-color: #3498db; color: white; border: none; padding: 10px; border-radius: 5px; }
@@ -322,12 +332,6 @@ class MCUpdaterGUI(QWidget):
         self.git_deployed = True
         self.progress_bar.setVisible(False)  # 隐藏进度条
         self.log_print("===== Git部署完成，开始检测更新 =====")
-
-        # 2. 启动更新线程
-        self.update_thread = UpdateThread()
-        self.update_thread.log_signal.connect(self.log_print)
-        self.update_thread.finish_signal.connect(self.on_update_finish)
-        self.update_thread.start()
 
     def on_update_finish(self, success):
         """更新完成后的回调"""
